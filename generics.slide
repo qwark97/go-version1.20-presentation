@@ -31,3 +31,47 @@ marcin.plata@softwaremind.com
 
 .image images/gopher.png 300 300
 
+## Short reminder
+
+// dla kogos less familiar with go, tutaj trzy opcje jak uzywac nowej wersji
+// 1) albo wejsc na stronę i zgodnie z instrukcjami pobrac binarke
+// 2) albo uzyc IDE
+// 3) albo uzyc dockera
+
+## Go versioning
+
+// ze golang wypuszcza nowego minora co pół roku
+// ze kazdy minor jest wstecznie kompatybilny
+// ze support jest na 3 ostatnie wersje
+// ze patch'e wychodzą bez harmonogramu a po prostu jak trzeba (? potwierdzić ?)
+// że na razie na horyzoncie nie ma go w wersji 2.X.X
+// ze niektore wersje wprowadzają większe, niektóre mniejsze zmiany
+// go 1.20 jest raczej spokojnieszy zwłaszcza w porównaniu do takiego 1.18 który wprowadził generyki
+
+## Go 1.20
+
+// że ta wersja została wypuszczona XYZ
+// w momencie pisania tego jest wersja 1.20.2
+// jak wspomnialem raczej spokojniejsza wersja
+// z istotnych ficzerów to wprowadza:
+// -
+// -
+// -
+// i teraz sobie przez to walk through
+
+## ...
+
+## Other modifications
+
+// z dodatkowych, mniej znaczących zmian mamy:
+// -
+// -
+// -
+
+## Next release
+
+// następna wersja będzie gdzies w okolicach XYZ
+// teraz zachęcam do używania nowej wersji go
+// podbijanie wersji w go nie jest problematyczne
+// a im czesciej będziemy to robić tym mniej potencjalnych problemów
+// takze jedna rzecz, którą chciałbym żebyście wynieśli z tej prezentacji to zaktualizujcie wersje w projektach w których pracujecie do 1.20
