@@ -1,0 +1,33 @@
+# Go 1.20
+Introduction to the newest language version
+
+Marcin Plata
+24 March 2023
+
+marcin.plata@softwaremind.com
+
+:   * today we'll talk about the newest golang version which is go 1.20
+:   * this presentation will be a bit shorter than usually but from time to time it should be refreshing to have a shorter meet up
+:   * I hope that this talk will be a first one from a series that will go through a new golang versions each time when those are being released
+:   * so let's get started
+
+## Agenda
+- Golang versioning overview
+- Biggest features of v1.20
+- Other modifications
+
+:   * firstly we'll talk about how the go language manages the versions
+:   * we'll say what is the schedule and how the process looks like
+
+:   * 
+:   * then we'll talk about the biggest - in my opinion - features that the go 1.20 brings to the table
+
+:   *
+:   * and at the end, we'll mention some other, less significant changes
+
+:   * 
+:   * in order to make it as useful as possible each important change will have some code examples
+:   *
+
+.image images/gopher.png 300 300
+
