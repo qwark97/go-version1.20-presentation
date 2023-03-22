@@ -33,6 +33,32 @@ marcin.plata@softwaremind.com
 
 ## Short reminder
 
+How to use newer version
+
+Official instructions
+
+:   * you can follow official guildline
+:   * it's rather simple operation
+:   * ofcourse differents steps depending on the OS you're using
+:   * just type "golang install" in google and it should be the first link
+
+.image images/official_instructions.png 500 500
+
+
+## Short reminder
+
+How to use newer version
+
+IDE support
+
+:   * you can use IDE in order to help yourself to switch to other version
+:   * for example in vs code, when you have a go file open, you can click on version in the bottom left corner
+:   * then the pop up will come up where you can click "Choose Go environment"
+:   * and then, as you can see on the slide, you can download
+
+.image images/ide_instructions.png 500 500
+
+
 // dla kogos less familiar with go, tutaj trzy opcje jak uzywac nowej wersji
 // 1) albo wejsc na stronę i zgodnie z instrukcjami pobrac binarke
 // 2) albo uzyc IDE
