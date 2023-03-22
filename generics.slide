@@ -31,6 +31,21 @@ marcin.plata@softwaremind.com
 
 .image images/gopher.png 300 300
 
+## But...
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; HOW TO GET THE NEW VERSION?
+
+:   * first things first
+:   * for those less familiar with the Go short reminder how to get new version
+
 ## Short reminder
 
 How to use newer version
@@ -39,7 +54,7 @@ Official instructions
 
 :   * you can follow official guildline
 :   * it's rather simple operation
-:   * ofcourse differents steps depending on the OS you're using
+:   * of course there are differents steps depending on the OS you're using
 :   * just type "golang install" in google and it should be the first link
 
 .image images/official_instructions.png 500 500
@@ -51,48 +66,96 @@ How to use newer version
 
 IDE support
 
-:   * you can use IDE in order to help yourself to switch to other version
-:   * for example in vs code, when you have a go file open, you can click on version in the bottom left corner
+:   * you can use IDE in order to help yourself to switch to another version
+:   * for example in vs code, when you have a go file opened, you can click on version in the bottom left corner
 :   * then the pop up will come up where you can click "Choose Go environment"
-:   * and then, as you can see on the slide, you can download
+:   * and then, as you can see on the slide, you can download or choose already downloaded go version
 
-.image images/ide_instructions.png 500 500
+.image images/ide_instructions.png 500 900
 
+## Short reminder
 
-// dla kogos less familiar with go, tutaj trzy opcje jak uzywac nowej wersji
-// 1) albo wejsc na stronę i zgodnie z instrukcjami pobrac binarke
-// 2) albo uzyc IDE
-// 3) albo uzyc dockera
+How to use newer version
+
+Docker image
+
+<zdjęcie z docker hub'a>
+
+:   * last but not least is the docker image
+:   * it's convinient way to use different go versions
+:   * although, in order to use it efficiently, probably some docker experience is needed
 
 ## Go versioning
 
-// ze golang wypuszcza nowego minora co pół roku
-// ze kazdy minor jest wstecznie kompatybilny
-// ze support jest na 3 ostatnie wersje
-// ze patch'e wychodzą bez harmonogramu a po prostu jak trzeba (? potwierdzić ?)
-// że na razie na horyzoncie nie ma go w wersji 2.X.X
-// ze niektore wersje wprowadzają większe, niektóre mniejsze zmiany
-// go 1.20 jest raczej spokojnieszy zwłaszcza w porównaniu do takiego 1.18 który wprowadził generyki
+<zdjęcie ze strony go z release policy>
+
+:   * alright, we have the newest go version
+:   * before we dive in into the interesting features 
+:   * let's say a few words about the Go language releases policy
+:   *
+:   * the go team goal is to release the new major every six months 
+:   * for the 3 months there is a stage of developing the features 
+:   * then, for the next 3 months is the stage of "release freeze" when no new features are being added 
+:   * the team then focuses on testing, polishing the features and fixing the bugs
+:   *
+:   * apart from that, life cycle of the version involves releasing some critical or security fixes
+:   *
+:   * the go team supports three latest versions with mentioned fixes
+:   *
+:   * some versions introduce more changes, some are less revolutionary
+:   * for example version 1.18 was a big deal because it introduced the generics
+:   * what is worth mentioning, all versions are backward compatible
+
 
 ## Go 1.20
 
-// że ta wersja została wypuszczona XYZ
-// w momencie pisania tego jest wersja 1.20.2
-// jak wspomnialem raczej spokojniejsza wersja
-// z istotnych ficzerów to wprowadza:
-// -
-// -
-// -
-// i teraz sobie przez to walk through
+<br />
+<br />
+<br />
+<br />
+<br />
 
-## ...
+* Multi errors
+* "comparable" expansion
+* Slice ---> list
+* Context verbosity
+* Binary with -cover flag
+
+:   * so, let's finally talk about the today's subject - the go version 1.20
+:   * it has been released the first february, this year.
+:   * it's rather less spectacular version
+:   * but it doesn't mean it is not offering anything interesting
+:   *
+:   * the features of the newest Go version that I want to show you today are
+:   * --- 1) Multi errors
+:   * --- 2) Expansion of the comparable type
+:   * --- 3) Possibility to transform slice to list
+:   * --- 4) The increase in the context verbosity
+:   * --- 5) The cover tool now can collect coverage profiles of whole programs, not just of unit tests.
+
+
+## Multi errors
+
+## "comparable" expansion
+
+## Slice ---> list
+
+## Context verbosity
+
+## Binary with -cover flag
+
+// pokazac coverage np servera http, jesli uda się zrobić takie "stopniowane" coverage - wtedy mozna by zobaczyc wykorzystanie poszczegolnych fragmentow kodu
 
 ## Other modifications
 
 // z dodatkowych, mniej znaczących zmian mamy:
-// -
-// -
-// -
+// - Experimental memory arenas
+// - http.ResponseController (?)
+// - math.Rand zaczął być randomowy domyślnie (sam seeduje)
+// - The language specification now defines the exact order in which array elements and struct fields are compared.
+// - The new time layout constants DateTime, DateOnly, and TimeOnly provide names for three of the most common layout strings used in a survey of public Go source code.
+
+see https://go.dev/doc/go1.20#go-command for more
 
 ## Next release
 
@@ -101,3 +164,9 @@ IDE support
 // podbijanie wersji w go nie jest problematyczne
 // a im czesciej będziemy to robić tym mniej potencjalnych problemów
 // takze jedna rzecz, którą chciałbym żebyście wynieśli z tej prezentacji to zaktualizujcie wersje w projektach w których pracujecie do 1.20
+
+:   * and that's all what I've prepared for today
+:   * thank you for your time, I hope you liked it
+:   * if you have any questions feel free to ask now or later, either on guild chat or directly to me
+:   * ...
+:   * alright, so that's it for today, have a good Firday
