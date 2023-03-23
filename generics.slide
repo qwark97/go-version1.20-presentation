@@ -136,7 +136,7 @@ Docker image
 
 ## Multi errors
 
-:   * Here we see some examples that will help us what have changed
+:   * Here we see some examples that will help us to see what have changed
 :   *
 :   * first case, the old approach. In golang prior 1.20 we could create the error using fmt package
 :   * but we could use only one "percent w" which means that the final error was in fact new error object
@@ -166,6 +166,24 @@ Docker image
 :   * but as from the go 1.20 this is a part of the language
 
 ## "comparable" expansion
+
+:   * the next thing we'll talk about is expanding the "comparable" - let's say - keyword, or build in interface
+:   * technically it's not a keyword, more like a predefined variable but whatever
+:   * go 1.18 introduced the generics. I was talking about that on one of my previous presentations
+:   * if anyone is interested and haven't seen that, I encourage to check it out
+:   * anyways, with the generics, this "comparable" value has been introduced
+:   * this is an interface that combines all types that are considered as a comparable: strings, bools, ints and so one
+:   * what it did't include was the interface type, which from go perspective is valid comparable type 
+:   * The go team wasn't sure if they wanted to include it because comparing two interfaces can cause the runtime panic
+:   *
+:   * as I mentioned, they really value the backward compatibility, so they didn't want to add the feature and allow people to rely on it
+:   * and then remove the feature - it would breake the code
+:   *
+:   * and this is being changed in the go 1.20
+:   * 
+:   * <EXAMPLE>
+:   * in go 1.19 this code won't comple
+:   * and in the go 1.20 this is perfectly valid 
 
 ## Slice ---> list
 
