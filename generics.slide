@@ -13,14 +13,14 @@ marcin.plata@softwaremind.com
 
 ## Agenda
 - Golang versioning overview
-- Biggest features of v1.20
+- Most interesting features of v1.20
 - Other modifications
 
 :   * firstly we'll talk about how the go language manages the versions
 :   * we'll say what is the schedule and how the process looks like
 
 :   * 
-:   * then we'll talk about the biggest - in my opinion - features that the go 1.20 brings to the table
+:   * then we'll talk about the most interesting - in my opinion - features that the go 1.20 brings to the table
 
 :   *
 :   * and at the end, we'll mention some other, less significant changes
@@ -119,7 +119,6 @@ Docker image
 * "comparable" expansion
 * Slice ---> list
 * Context verbosity
-* Binary with -cover flag
 
 :   * so, let's finally talk about the today's subject - the go version 1.20
 :   * it has been released the first february, this year.
@@ -131,7 +130,6 @@ Docker image
 :   * --- 2) Expansion of the comparable type
 :   * --- 3) Possibility to transform slice to list
 :   * --- 4) The increase in the context verbosity
-:   * --- 5) The cover tool now can collect coverage profiles of whole programs, not just of unit tests.
 
 
 ## Multi errors
@@ -207,29 +205,60 @@ Docker image
 
 ## Context verbosity
 
-## Binary with -cover flag
-
-// pokazac coverage np servera http, jesli uda się zrobić takie "stopniowane" coverage - wtedy mozna by zobaczyc wykorzystanie poszczegolnych fragmentow kodu
+:   * and last but not least - go 1.20 increases the context verbosity
+:   *
+:   * the context itself was introduced in go 1.7 so it was some time ago
+:   * now context is widely used in the go code 
+:   * and in my opinion it should be used everywhere where
+:   * goroutines are in use or where some external operations are being performed e.g making requests, using db and so one
+:   * 
+:   * one of the most important functionality that context provides is the possibility to cancel some operations
+:   * either through timeout or deliberetly by calling cancel function
+:   * 
+:   * timeout case is straightforward but 
+:   * until the go 1.20, it was hard to figure out **why** someone called the "cancel" function of the active context
+:   * as we can see on the example, the error says only that the contex was cancelled
+:   *
+:   * the go 1.20 changes that by introducing the new function which is "WithCancelCause"
+:   * it allows to pass to the cancel function the error, which can explain what is the reason behind cancelling the context
+:   * to be able to retreive this error, we need to call another new thing, the "context.Cause" function
+:   * someone could ask: "Why the heck they've done that this way?!. Why not to use the Err function as it was already there"
+:   * well, it's all about the mentioned before, backward compatibility.
+:   *
+:   * as the context.Err has been always returning the conrete error types, if it would start to return some different errors it could possibly breake a lot of code
+:   * therefore they decided to do this workaround with context.Cause function
+:   *
 
 ## Other modifications
 
-// z dodatkowych, mniej znaczących zmian mamy:
-// - Experimental memory arenas
-// - http.ResponseController (?)
-// - math.Rand zaczął być randomowy domyślnie (sam seeduje)
-// - The language specification now defines the exact order in which array elements and struct fields are compared.
-// - The new time layout constants DateTime, DateOnly, and TimeOnly provide names for three of the most common layout strings used in a survey of public Go source code.
+- random __math.Rand__
+- defined order for array and strcuct fields
+- new layout constants for time: **DateTime**, **DateOnly**, and **TimeOnly**
+- ...
 
-see https://go.dev/doc/go1.20#go-command for more
+:   * there is many addtional changes that I haven't covered here
+:   *
+:   * math random is finally random by default, without explicite seeding
+:   * The language specification now defines the exact order in which array elements and struct fields are compared
+:   * new useful layots for time values, remember about that next time you will be parsing some date
+:   *
+:   * also there is a new flag for "go build" command which allows to use coverage on the binary
+:   * it can be very useful on profiling what parts of the code are being used
+:   *
+:   * anyways, I encourage you to checkout the full release notes
+
+see:
+
+.link https://go.dev/doc/go1.20
 
 ## Next release
 
-// następna wersja będzie gdzies w okolicach XYZ
-// teraz zachęcam do używania nowej wersji go
-// podbijanie wersji w go nie jest problematyczne
-// a im czesciej będziemy to robić tym mniej potencjalnych problemów
-// takze jedna rzecz, którą chciałbym żebyście wynieśli z tej prezentacji to zaktualizujcie wersje w projektach w których pracujecie do 1.20
+<zdjęcie gophera patrzacego w przyszlosc>
 
+:   * the next go version will be probably around august
+:   * now I really encourage you to updating go version in your projects,
+:   * especially if you are using someting older than go 1.18
+:   *
 :   * and that's all what I've prepared for today
 :   * thank you for your time, I hope you liked it
 :   * if you have any questions feel free to ask now or later, either on guild chat or directly to me
