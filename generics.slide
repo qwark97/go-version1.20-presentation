@@ -136,6 +136,35 @@ Docker image
 
 ## Multi errors
 
+:   * Here we see some examples that will help us what have changed
+:   *
+:   * first case, the old approach. In golang prior 1.20 we could create the error using fmt package
+:   * but we could use only one "percent w" which means that the final error was in fact new error object
+:   * this new error contained in the tree the error that used the "percent w" formatter
+:   * therefore, as we can see in the assertion, only first one was correct
+:   * the other errors were just messages in the newly created errors
+:   * the types of those were lost, therefore for example comparition wasn't possible anymore
+:   *
+:   * the second posibility was to create, let's say, the tree of errors
+:   * we could build hierarchy of errors and then unwrap it in the LIFO order
+:   *
+:   * what go 1.20 introduces is possibility to combine multiple errors in one, in a way that no error types will be lost in the process
+:   * this is what we can see in the third example
+:   * it looks very simillar as the first one, but here we are using the three "percent w" formatters
+:   * thanks to that, as we can see in the assertion, 
+:   * the truth is that the given error "IS" each and every of the errors that it has been created from
+:   * the string representation of such combined error is also as expected
+:   *
+:   * the other possibility to create error that contains many errors is new function from "errors" package
+:   * it is called "Join" and we can see it in the last example.
+:   * from the types perspective it creates the same output as the approach with the "fmt" package
+:   * although the string representation of the output is less human readable
+:   * so I guess the better approach is to go with the "fmt" way of creating multiple errors on the same level
+:   *
+:   * whole this functionality can be very useful when we deal with processes that can fail in different places on the same time
+:   * there are already external packages that provide this kind of functionality like e.g hashicorp/go-multierror
+:   * but as from the go 1.20 this is a part of the language
+
 ## "comparable" expansion
 
 ## Slice ---> list
