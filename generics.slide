@@ -187,6 +187,24 @@ Docker image
 
 ## Slice ---> list
 
+:   * the next thing is really short one but I think it might be quite usefull
+:   * 
+:   * in go, I think since always there was possibility to make a slice from a list
+:   * the go 1.20 makes it easy to do the reverse operation
+:   *
+:   * let's see the code
+:   *
+:   * <RUN THE CODE WITH THE STDOUT>
+:   * we can differentiate the slice and list
+:   * 
+:   * simple way to make a slice from list
+:   * hacky way of creating the list from slice (I think it was possible since go 1.17)
+:   * and finally, the method to change the slice to list introduced by go 1.20
+:   *
+:   * what is interesting, using the length smaller than slice length will cause that the result list will be cut
+:   * on the other hand, using the lengh bigger than the actual slice length will cause panic
+:   * so be carefull with that
+
 ## Context verbosity
 
 ## Binary with -cover flag
