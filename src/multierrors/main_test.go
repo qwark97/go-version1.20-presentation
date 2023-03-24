@@ -14,18 +14,18 @@ var (
 	errThird  = errors.New("third-error")
 )
 
-func TestFirstCase_FAIL(t *testing.T) {
+func TestFirstCase(t *testing.T) {
 	err := fmt.Errorf("%w, %v, %v", errFirst, errSecond, errThird)
 
 	assert.ErrorIs(t, err, errFirst)
-	assert.ErrorIs(t, err, errSecond)
-	assert.ErrorIs(t, err, errThird)
+	assert.NotErrorIs(t, err, errSecond)
+	assert.NotErrorIs(t, err, errThird)
 
 	expectedStrRepr := "first-error, second-error, third-error"
 	assert.Equal(t, expectedStrRepr, err.Error())
 }
 
-func TestSecondCase_SUCCESS(t *testing.T) {
+func TestSecondCase(t *testing.T) {
 	err1 := errFirst
 	err2 := fmt.Errorf("%w", err1)
 	err3 := fmt.Errorf("%w", err2)
@@ -37,7 +37,7 @@ func TestSecondCase_SUCCESS(t *testing.T) {
 	assert.ErrorIs(t, err1, unwrappedErr2)
 }
 
-func TestThirdCase_SUCCESS(t *testing.T) {
+func TestThirdCase(t *testing.T) {
 	err := fmt.Errorf("%w, %w, %w", errFirst, errSecond, errThird)
 
 	assert.ErrorIs(t, err, errFirst)
@@ -48,7 +48,7 @@ func TestThirdCase_SUCCESS(t *testing.T) {
 	assert.Equal(t, expectedStrRepr, err.Error())
 }
 
-func TestForthCase_SUCCESS(t *testing.T) {
+func TestForthCase(t *testing.T) {
 	err := errors.Join(errFirst, errSecond, errThird)
 
 	assert.ErrorIs(t, err, errFirst)
