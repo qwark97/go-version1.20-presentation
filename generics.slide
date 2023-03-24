@@ -257,9 +257,7 @@ see:
 
 .link https://go.dev/doc/go1.20
 
-## Next release
-
-<zdjęcie gophera patrzacego w przyszlosc>
+## Next release?
 
 :   * the next go version will be probably around an August
 :   * now I really encourage you to update the go version in your projects,
