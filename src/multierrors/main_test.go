@@ -30,6 +30,8 @@ func TestSecondCase(t *testing.T) {
 	err2 := fmt.Errorf("%w", err1)
 	err3 := fmt.Errorf("%w", err2)
 
+	assert.ErrorIs(t, err3, errFirst)
+
 	unwrappedErr3 := errors.Unwrap(err3)
 	assert.ErrorIs(t, err2, unwrappedErr3)
 

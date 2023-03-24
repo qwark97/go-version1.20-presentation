@@ -146,6 +146,7 @@ Docker image
 :   *
 :   * the second posibility was to create, let's say, the tree of errors
 :   * we could build hierarchy of errors and then unwrap it in the LIFO order
+:   * the types of the errors inside this tree are not lost, but those errors are not on the same level
 :   *
 :   * what go 1.20 introduces is possibility to combine multiple errors in one, in a way that no error types will be lost in the process
 :   * this is what we can see in the third example
