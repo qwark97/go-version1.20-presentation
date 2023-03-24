@@ -79,15 +79,13 @@ How to use newer version
 
 Docker image
 
-<zdjęcie z docker hub'a>
-
 :   * last but not least is the docker image
 :   * it's convinient way to use different go versions
 :   * although, in order to use it efficiently, probably some docker experience is needed
 
-## Go versioning
+.image images/dockerhub.png 500 500
 
-<zdjęcie ze strony go z release policy>
+## Go versioning
 
 :   * alright, we have the newest go version
 :   * before we dive in into the interesting features 
@@ -106,6 +104,7 @@ Docker image
 :   * for example version 1.18 was a big deal because it introduced the generics
 :   * what is worth mentioning, all versions are backward compatible
 
+.image images/policy.png 200 1000
 
 ## Go 1.20
 
@@ -134,7 +133,9 @@ Docker image
 
 ## Multi errors
 
-:   * Here we see some examples that will help us to see what have changed
+:   * first thing, multi errors
+:   * we will switch to the code
+:   * examples will help us to see what have changed
 :   *
 :   * first case, the old approach. In golang prior 1.20 we could create the error using fmt package
 :   * but we could use only one "percent w" which means that the final error was in fact new error object
@@ -177,9 +178,10 @@ Docker image
 :   * as I mentioned, they really value the backward compatibility, so they didn't want to add the feature and allow people to rely on it
 :   * and then remove the feature - it would breake the code
 :   *
-:   * and this is being changed in the go 1.20
+:   * for the go 1.20, they decided that yes, expanding the "comparable" key word with interface type is what we need
+:   * therefore the go 1.20 does that
 :   * 
-:   * <EXAMPLE>
+:   * !!!EXAMPLE!!!
 :   * in go 1.19 this code won't comple
 :   * and in the go 1.20 this is perfectly valid 
 
@@ -192,7 +194,8 @@ Docker image
 :   *
 :   * let's see the code
 :   *
-:   * <RUN THE CODE WITH THE STDOUT>
+:   * !!!RUN THE CODE WITH THE STDOUT!!!
+:   * if we run it
 :   * we can differentiate the slice and list
 :   * 
 :   * simple way to make a slice from list
@@ -214,6 +217,8 @@ Docker image
 :   * 
 :   * one of the most important functionality that context provides is the possibility to cancel some operations
 :   * either through timeout or deliberetly by calling cancel function
+:   *
+:   * !!!TO THE CODE!!!
 :   * 
 :   * timeout case is straightforward but 
 :   * until the go 1.20, it was hard to figure out **why** someone called the "cancel" function of the active context
@@ -236,16 +241,16 @@ Docker image
 - new layout constants for time: **DateTime**, **DateOnly**, and **TimeOnly**
 - ...
 
-:   * there is many addtional changes that I haven't covered here
+:   * there are many addtional changes that I haven't covered here
+:   * as I said, this talk meant to be the short one, just to briefly describle the features of the go 1.20
 :   *
+:   * from other modifications that happened in this update are:
 :   * math random is finally random by default, without explicite seeding
 :   * The language specification now defines the exact order in which array elements and struct fields are compared
 :   * new useful layots for time values, remember about that next time you will be parsing some date
+:   * 
 :   *
-:   * also there is a new flag for "go build" command which allows to use coverage on the binary
-:   * it can be very useful on profiling what parts of the code are being used
-:   *
-:   * anyways, I encourage you to checkout the full release notes
+:   * and many more you can checkout in the the release notes under this link
 
 see:
 
@@ -255,8 +260,8 @@ see:
 
 <zdjęcie gophera patrzacego w przyszlosc>
 
-:   * the next go version will be probably around august
-:   * now I really encourage you to updating go version in your projects,
+:   * the next go version will be probably around an August
+:   * now I really encourage you to update the go version in your projects,
 :   * especially if you are using someting older than go 1.18
 :   *
 :   * and that's all what I've prepared for today

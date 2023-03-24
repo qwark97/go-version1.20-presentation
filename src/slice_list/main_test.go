@@ -18,10 +18,10 @@ func Test(t *testing.T) {
 
 	// slice to list (hack)
 	myNewListHack := *(*[2]int)(mySlice)
-	fmt.Printf("new slice (hack): %v(%T)\n\n", myNewListHack, myNewListHack)
+	fmt.Printf("new list (hack): %v(%T)\n\n", myNewListHack, myNewListHack)
 
 	// slice to list (NEW)
 	myNewList := [2]int(mySlice)
-	fmt.Printf("new slice: %v(%T)\n\n", myNewList, myNewList)
+	fmt.Printf("new list: %v(%T)\n\n", myNewList, myNewList)
 
 }
